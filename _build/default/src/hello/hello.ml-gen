@@ -1,0 +1,2 @@
+(** @canonical Hello.Hello_module *)
+module Hello_module = Hello__Hello_module
