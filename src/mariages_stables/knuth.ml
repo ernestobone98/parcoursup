@@ -1,22 +1,34 @@
 open Definitions
 
+let choix x = function
+  | (-1) -> None
+  | _ -> Some x
+
 let algo ?(affiche_config=true) entree =
   if (entree_valide entree) then begin
     ignore affiche_config;
     let k = ref 0 in
-    let conf = {rang_appel_de = Array.make entree.n 0 ; fiance_de = Array.make entree.n None } in 
-    let p : (femme*femme) array = [||] in
-    while !k < 1 do
-      let f = ref (entree.liste_appel_de.(!k).(conf.rang_appel_de.(!k))) in
-      while conf.rang_appel_de.(!k) < 1 do
+    let x: homme ref = ref 0 in
+    let f: femme ref = ref 0 in
+    (* let choix = ref (-1) in *)
+    let conf : configuration = {rang_appel_de = Array.make entree.n 0 ; fiance_de = Array.make entree.n None } in 
+    let p : (femme*femme) array = Array.make entree.n (0,0) in
+    while !k < entree.n do
+      while (choix !x) <> None do
+        f := entree.liste_appel_de.(!x).(conf.rang_appel_de.(!x));
         if conf.fiance_de.(!f) = None then begin
-          conf.fiance_de.(!f) <- Some !k
+          conf.fiance_de.(!f) <- Some !x;
+          x := !x + 1;
         end
-        else if entree.prefere.(!f) !k (Option.get conf.fiance_de.(!f))
-        then conf.fiance_de.(!f) <- Some !k
+        else if entree.prefere.(!f) !x (Option.get conf.fiance_de.(!f))
+        then begin 
+          let h_tmp = Option.get conf.fiance_de.(!f) in
+          conf.fiance_de.(!f) <- Some !x;
+          x := h_tmp;
+          conf.rang_appel_de.(!x) <- conf.rang_appel_de.(!x) + 1;
+        end
       done;
-      (* p.(!k) <- (!k,conf.rang_appel_de.(!k)); *)
-      
+      (* p.(!k) <- (!h,conf.rang_appel_de.(!h)); *)
       k := !k + 1;
     done;
     (* let p : (femme*femme) array = [||] in
