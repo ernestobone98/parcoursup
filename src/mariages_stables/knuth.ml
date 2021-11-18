@@ -201,7 +201,7 @@ let algo ?(affiche_config=true) entree =
     done;
     Array.to_list p;
   end
-  else invalid_arg "L'entree n'est pas valide"
+  else invalid_arg "L'entree n'est pas valide";
 
 
 (* let algo ?(affiche_config=false) entree =
