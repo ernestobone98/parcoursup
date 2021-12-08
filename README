@@ -1,8 +1,36 @@
 FEATURES
-blablabla
+
+- Algorithme de Knuth et Abstrait :
+    Nous avons suivi le pseudo-code fourni en ayant parfois à séparer certains cas pour mieux gérer les mariages.
+
+- Algorithme de Gale-Shapley :
+    Fonctions auxilieres :
+        remove_from_left xs-> Permet d'éliminer les répétitions dans la liste donnée
+        remove n l-> Enlève l'élément n de la liste l
+        list_to_array lst -> cast liste à tableau
+        find x arr -> Renvoie l'élément e du tableau arr
 
 TESTS
-blablblabla
+
 
 KNOWN ISSUES
-blablabla
+
+Nous avons eu des soucis dans la compréhension du projet qui est assez complexe (tests, compilation)
+- Algorithme de Knuth :
+    Nous avons rencontré un problème dans le remariage d'un homme dans le cas d'un divorce. 
+    Nous avons testé plusieurs méthodes et avons reussi à adapter le pseudo-code à notre conception en traitant le problème au cas par cas. 
+    Il a fallu aussi réfléchir sur le type de retour de la fonction. Nous avons utilisé un tableau qu'on transforme en liste par la suite.
+
+- Algorithme de Gale-Shapley :  
+    Dans cet algo nous avons dû mettre en place quelques fonctions auxiliaires pour nous aider à modifier les listes               originales. 
+    Le fait d'effectuer plusieurs mariages en même temps a été difficile à gérer.
+    Travailler avec des listes a augmenter énormément le nombre de caractères. 
+
+- Algorithme Abstrait :
+    Nous avons eu plus de facilités dans l'implémentation des deux structures de données (Pile et File).
+    Concernant l'algorithme en lui même, nous avons implémenté le pseudo-code fourni en l'adaptant à notre manière.
+- Parcoursup : 
+    Nous avons défini de manière intuitive notre structure de données. 
+    En revanche, on a rencontré un gros probleme dans la manipulation de notre structure pour la fonction "ajoute_voeu".
+    Nous n'avons pas pu aller au dela de ça.
+
