@@ -61,7 +61,8 @@ let find x arr =
 
       done;
       
-      print_configuration conf;
+      if List.length !single_men > 0 then
+        print_configuration conf;
       pretendants := []; (*il faut vider la liste. Sinon on aura les aciens pretendants a chaque iteration*) 
 
     done;
