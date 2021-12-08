@@ -1,8 +1,4 @@
 open Definitions
-<<<<<<< HEAD
-=======
-
->>>>>>> 51b2eced7b598c89ea6146798f3b0f6c44546517
 let algo ?(affiche_config=true) entree =
   if (entree_valide entree) then begin
   ignore affiche_config;
@@ -39,11 +35,4 @@ let algo ?(affiche_config=true) entree =
   done; 
   Array.to_list p;
   end
-<<<<<<< HEAD
   else invalid_arg "L'entree n'est pas valide"
-
-
-  (* cat _build/default/test/mariages_stables/knuth/test_knuth.output *)
-=======
-  else invalid_arg "L'entree n'est pas valide"
->>>>>>> 51b2eced7b598c89ea6146798f3b0f6c44546517
